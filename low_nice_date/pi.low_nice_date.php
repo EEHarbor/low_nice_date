@@ -2,7 +2,7 @@
 
 $plugin_info = array(
 	'pi_name'			=> 'Low Nice Date',
-	'pi_version'		=> '2.0',
+	'pi_version'		=> '2.1',
 	'pi_author'			=> 'Lodewijk Schutte ~ Low',
 	'pi_author_url'		=> 'http://loweblog.com/freelance/article/ee-nice-date-plugin/',
 	'pi_description'	=> 'Displays a nice date.',
@@ -92,6 +92,29 @@ class Low_nice_date {
 	}
 
 	// --------------------------------------------------------------------
+
+	/**
+	* Calculate difference in years, months and days in given date range
+	*
+	* @return	string
+	*/	
+	function range()
+	{
+		$data = array();
+
+		$data['from'] = $this->EE->TMPL->fetch_param('from');
+		$data['to']   = $this->EE->TMPL->fetch_param('to');
+
+		$diff = abs($data['to'] - $data['from']);
+
+		$data['years']  = floor($diff / (365*60*60*24));
+		$data['months'] = floor(($diff - $data['years'] * 365*60*60*24) / (30*60*60*24));
+		$data['days']   = floor(($diff - $data['years'] * 365*60*60*24 - $data['months']*30*60*60*24)/ (60*60*24));
+
+		return $this->EE->TMPL->parse_variables($this->EE->TMPL->tagdata, array($data));
+	}
+
+	// --------------------------------------------------------------------
 	
 	/**
 	* Plugin Usage
@@ -105,6 +128,14 @@ class Low_nice_date {
 			{exp:low_nice_date date="2007-05-20" format="%F %j%S, %Y" localize="yes"}
 
 			{exp:low_nice_date date="{segment_3}-{segment_4}-01" format="%F %Y"}
+
+			{exp:low_nice_date:range from="{date_1}" to="{date_2}"}
+				{if days > 0}
+					This takes longer than a day
+				{if:else}
+					Range in the same day
+				{/if}
+			{/exp:low_nice_date:range}
 		<?php
 		$buffer = ob_get_contents();
   
