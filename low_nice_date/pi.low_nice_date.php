@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $plugin_info = array(
-	'pi_name'			=> 'Low Nice Date',
-	'pi_version'		=> '2.2.0',
-	'pi_author'			=> 'Lodewijk Schutte ~ Low',
-	'pi_author_url'		=> 'http://gotolow.com/addons/low-nice-date',
-	'pi_description'	=> 'Displays a nice date.',
-	'pi_usage'			=> 'See http://gotolow.com/addons/low-nice-date for more info.'
+	'pi_name'        => 'Low Nice Date',
+	'pi_version'     => '2.2.0',
+	'pi_author'      => 'Lodewijk Schutte ~ Low',
+	'pi_author_url'  => 'http://gotolow.com/addons/low-nice-date',
+	'pi_description' => 'Displays a nice date.',
+	'pi_usage'       => 'See http://gotolow.com/addons/low-nice-date for more info.'
 );
 
 /**
