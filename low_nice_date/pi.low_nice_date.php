@@ -55,11 +55,22 @@ class Low_nice_date {
 	 */
 	public function __construct()
 	{
+		$this->return_data = $this->format();
+	}
+
+	/**
+	 * Displays the nice date
+	 *
+ 	 * @access     public
+	 * @return     string
+	 */
+	public function format()
+	{
 		// -------------------------------------------
 		// Get parameters
 		// -------------------------------------------
 
-		$date   = ee()->TMPL->fetch_param('date', time());
+		$date   = ee()->TMPL->fetch_param('date', ee()->localize->now);
 		$format = ee()->TMPL->fetch_param('format');
 		$loc    = (ee()->TMPL->fetch_param('localize') == 'yes');
 
@@ -70,10 +81,18 @@ class Low_nice_date {
 		$time = $this->_stamp($date);
 
 		// -------------------------------------------
+		// Which method?
+		// -------------------------------------------
+
+		$method = (is_callable(array(ee()->localize, 'format_date')))
+			? 'format_date'
+			: 'decode_date';
+
+		// -------------------------------------------
 		// Format timestamp
 		// -------------------------------------------
 
-		$this->return_data = ($time && $format) ? ee()->localize->decode_date($format, $time, $loc) : $date;
+		return ($time && $format) ? ee()->localize->$method($format, $time, $loc) : $date;
 	}
 
 	// --------------------------------------------------------------------
@@ -91,8 +110,8 @@ class Low_nice_date {
 		// -------------------------------------------
 
 		$data = array(
-			'from' => $this->_stamp(ee()->TMPL->fetch_param('from', time())),
-			'to'   => $this->_stamp(ee()->TMPL->fetch_param('to', time()))
+			'from' => $this->_stamp(ee()->TMPL->fetch_param('from', ee()->localize->now)),
+			'to'   => $this->_stamp(ee()->TMPL->fetch_param('to', ee()->localize->now))
 		);
 
 		// -------------------------------------------
@@ -130,8 +149,15 @@ class Low_nice_date {
 	{
 		if ( ! is_numeric($str))
 		{
-			if ($utc) $str .= ' UTC';
-			$str = strtotime($str);
+			if (is_callable(array(ee()->localize, 'string_to_timestamp')))
+			{
+				$str = ee()->localize->string_to_timestamp($str);
+			}
+			else
+			{
+				if ($utc) $str .= ' UTC';
+				$str = strtotime($str);
+			}
 		}
 
 		return (int) $str;
