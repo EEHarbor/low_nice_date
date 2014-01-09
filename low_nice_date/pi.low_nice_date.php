@@ -2,7 +2,7 @@
 
 $plugin_info = array(
 	'pi_name'        => 'Low Nice Date',
-	'pi_version'     => '2.2.0',
+	'pi_version'     => '2.2.1',
 	'pi_author'      => 'Lodewijk Schutte ~ Low',
 	'pi_author_url'  => 'http://gotolow.com/addons/low-nice-date',
 	'pi_description' => 'Displays a nice date.',
