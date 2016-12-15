@@ -59,18 +59,10 @@ class Low_nice_date {
 		$time = $this->_stamp($date);
 
 		// -------------------------------------------
-		// Which method?
-		// -------------------------------------------
-
-		$method = (is_callable(array(ee()->localize, 'format_date')))
-			? 'format_date'
-			: 'decode_date';
-
-		// -------------------------------------------
 		// Format timestamp
 		// -------------------------------------------
 
-		return ($time && $format) ? ee()->localize->$method($format, $time, $loc) : $date;
+		return ($time && $format) ? ee()->localize->format_date($format, $time, $loc) : $date;
 	}
 
 	// --------------------------------------------------------------------
