@@ -10,11 +10,11 @@
  */
 
 return array(
-	'author'         => 'Low',
-	'author_url'     => 'http://gotolow.com/',
-	'docs_url'       => 'https://gotolow.com/addons/low_nice_date',
-	'name'           => 'Low Nice Date',
-	'description'    => 'Displays a nice date',
-	'version'        => '3.0.0',
-	'namespace'      => 'Low\NiceDate'
+    'author'         => 'Low',
+    'author_url'     => 'http://gotolow.com/',
+    'docs_url'       => 'https://gotolow.com/addons/low_nice_date',
+    'name'           => 'Low Nice Date',
+    'description'    => 'Displays a nice date',
+    'version'        => '3.0.0',
+    'namespace'      => 'Low\NiceDate'
 );
