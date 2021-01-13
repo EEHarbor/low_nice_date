@@ -10,7 +10,11 @@
  * @link           http://gotolow.com/addons/low-nice-date
  * @license        http://creativecommons.org/licenses/by-sa/3.0/
  */
-class Low_nice_date
+
+include_once "addon.setup.php";
+use Low\NiceDate\FluxCapacitor\Base\Pi;
+
+class Low_nice_date extends Pi
 {
 
     // --------------------------------------------------------------------
@@ -36,6 +40,7 @@ class Low_nice_date
      */
     public function __construct()
     {
+        parent::__construct();
         $this->return_data = $this->format();
     }
 
