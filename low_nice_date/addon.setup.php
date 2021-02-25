@@ -1,20 +1,15 @@
 <?php
 
-/**
- * Low Nice Date config file
- *
- * @package        low_nice_date
- * @author         Lodewijk Schutte <hi@gotolow.com>
- * @link           http://gotolow.com/
- * @copyright      Copyright (c) 2016, Low
- */
+require_once 'autoload.php';
+$addonJson = json_decode(file_get_contents(__DIR__ . '/addon.json'));
 
 return array(
-	'author'         => 'Low',
-	'author_url'     => 'http://gotolow.com/',
-	'docs_url'       => 'https://gotolow.com/addons/low_nice_date',
-	'name'           => 'Low Nice Date',
-	'description'    => 'Displays a nice date',
-	'version'        => '3.0.0',
-	'namespace'      => 'Low\NiceDate'
+    'name'              => $addonJson->name,
+    'description'       => $addonJson->description,
+    'version'           => $addonJson->version,
+    'namespace'         => $addonJson->namespace,
+    'author'            => 'EEHarbor',
+    'author_url'        => 'http://eeharbor.com/low_nice_date',
+    'docs_url'          => 'http://eeharbor.com/low_nice_date/documentation',
+    'settings_exist'    => false,
 );

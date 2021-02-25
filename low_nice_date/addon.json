@@ -1,0 +1,16 @@
+{
+    "name": "Low Nice Date",
+    "shortname": "low_nice_date",
+    "version": "4.0.0",
+    "foundation_version": "4.6.1",
+    "description": "Displays a nice date",
+    "license": "EEHarbor",
+    "namespace": "Low\\NiceDate",
+    "require": {
+        "php": ">=5.6.*",
+        "expressionengine/core": ">=3"
+    },
+    "resources": {
+
+    }
+}
