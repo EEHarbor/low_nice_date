@@ -1,4 +1,6 @@
-<?php if (! defined('BASEPATH')) {
+<?php
+
+if (! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
@@ -102,9 +104,9 @@ class Low_nice_date extends Pi
         // Get number of years, months and days for this difference
         // -------------------------------------------
 
-        $data['years']  = floor($diff / (365*60*60*24));
-        $data['months'] = floor(($diff - $data['years'] * 365*60*60*24) / (30*60*60*24));
-        $data['days']   = floor(($diff - $data['years'] * 365*60*60*24 - $data['months']*30*60*60*24) / (60*60*24));
+        $data['years']  = floor($diff / (365 * 60 * 60 * 24));
+        $data['months'] = floor(($diff - $data['years'] * 365 * 60 * 60 * 24) / (30 * 60 * 60 * 24));
+        $data['days']   = floor(($diff - $data['years'] * 365 * 60 * 60 * 24 - $data['months'] * 30 * 60 * 60 * 24) / (60 * 60 * 24));
 
         // -------------------------------------------
         // Parse the template
