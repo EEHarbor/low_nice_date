@@ -2,7 +2,7 @@
     "name": "Low Nice Date",
     "shortname": "low_nice_date",
     "version": "4.0.2",
-    "foundation_version": "4.9.0",
+    "foundation_version": "4.10.0",
     "description": "Displays a nice date",
     "license": "EEHarbor",
     "namespace": "Low\\NiceDate",
