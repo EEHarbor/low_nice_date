@@ -1,11 +1,11 @@
 window.doc_page = {
-    addon: '-----',
+    addon: 'Low Nice Date',
     title: 'Tags',
     sections: [
         {
             title: '',
             type: 'tagtoc',
-            desc: '------ has the following front-end tags: ',
+            desc: 'Low Nice Date has the following front-end tags: ',
         },
         {
             title: '',
@@ -98,13 +98,13 @@ window.doc_page = {
                             examples: [
                                 {
                                     tag_example: `
-                                    {exp:low_nice_date:range from="{date_one}" to="{date_two}"}
-                                        {if days == 0}
-                                        The two dates are on the same day
-                                        {if:else}
-                                        The two dates span {days} days
-                                        {/if}
-                                    {/exp:low_nice_date:range}`,
+{exp:low_nice_date:range from="{date_one}" to="{date_two}"}
+    {if days == 0}
+        The two dates are on the same day
+    {if:else}
+        The two dates span {days} days
+    {/if}
+{/exp:low_nice_date:range}`,
                                     outputs: ``
                                  }
                              ]
