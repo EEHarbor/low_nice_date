@@ -1,11 +1,11 @@
 window.doc_page = {
-    addon: '-----',
+    addon: 'Low Nice Date',
     title: 'Tags',
     sections: [
         {
             title: '',
             type: 'tagtoc',
-            desc: '------ has the following front-end tags: ',
+            desc: 'Low Nice Date has the following front-end tags: ',
         },
         {
             title: '',
