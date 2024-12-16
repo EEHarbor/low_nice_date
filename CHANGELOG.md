@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [4.1.0] - 2024-12-16
+### Changed
+- PHP 8.4 Ready
+- Foundation Updated to 4.11.0
+
 ## [4.0.2] - 2022-09-26
 - Verified ExpressionEngine 7 Compatibility
 
